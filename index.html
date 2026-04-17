@@ -11,6 +11,11 @@
         <header>
             <nav>
                 <div class="logo">Medium.</div>
+
+                <div class="hamburger" id="hamburger">
+        ☰
+    </div>
+
                 <ul class="menu">
                     <li><a href="#">Our Story</a></li>
                     <li><a href="#">Membership</a></li>
@@ -20,25 +25,39 @@
                 </ul>
             </nav>
         </header>
+        
+       <main class="main-content">
         <div class="container">
             <section class="hero">
-            <h1>HUMAN STORIES & IDEAS.</h1>
-            <p>Discover stories, thinking and expertise from writers on any topic.</p>
-            <button class="butt">Start Reading</button>
-        </section>
-        <section><img  class="image" src="C:\Users\user\Downloads\Untitled design (3).png" alt="flower" /></section>
+                <h1>HUMAN STORIES & IDEAS.</h1>
+                <p>Discover stories, thinking and expertise from writers on any topic.</p>
+                <button class="butt">Start Reading</button>
+            </section>
 
+            <section>
+                <img class="image" src="images/Untitled design (3).png" alt="flower" />
+            </section>
         </div>
+
         <div class="cont">
             <section class="features">
-            <h2>Why Medium?</h2>
-            <p>Explore fresh ideas from writers worldwide.</p>
-        </section>
+                <h2>Why Medium?</h2>
+                <p>Explore fresh ideas from writers worldwide.</p>
+            </section>
         </div>
-
-
+    </main>
         <footer>
             <p>&copy; 2025 Medium. All rights reserved.</p>
         </footer>
+
+        <script>
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
+
+    hamburger.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+</script>
+
     </body>
 </html>
