@@ -1,20 +1,48 @@
+
+:root {
+    --bg-light-blue: #d4dbee;
+    --bg-white: #f4f6fc;
+    --text-dark: #242424;
+    --accent-black: #000000;
+    --font-main: 'Playfair Display', serif;
+    --transition-speed: 0.3s;
+}
+
 * {
-    font-family: 'Playfair Display' , serif;
+    font-family: var(--font-main);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: #242424;
+    color: var(--text-dark);
 }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* --- Navigation --- */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #d4dbee;
+    background-color: var(--bg-light-blue);
+    border-bottom: 1px solid rgba(0,0,0,0.1); /* Subtle professional touch */
 }
 
-.main-content {
-    flex: 1;
+.logo {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
 }
 
 .hamburger {
@@ -22,87 +50,55 @@ nav {
     font-size: 28px;
     cursor: pointer;
 }
-.menu {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    gap: 30px;
-}
-a {
-    text-decoration: none;
-    color: inherit;
-}
-.logo {
-    font-size: 35px;
-    margin-left: 20px;
-    font-weight: bold;
-}
-.btn {
-    background-color: #000;
+
+/* --- Buttons --- */
+.btn, .butt {
+    background-color: var(--accent-black);
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border: none;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
+
+/* Hover effect: Subtle but professional */
+.btn:hover, .butt:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* --- Layout Sections --- */
 .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    background-color: #f4f6fc;
-    gap: 40px;
-    flex-wrap: wrap;
-    padding: 0 20px;
+    max-width: 1200px; /* Limits width on huge screens */
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: #f4f6fc;
+    background-color: var(--bg-white);
+    padding: 60px 0;
 }
+
 .hero h1 {
-    font-size: 66px;
-    margin-bottom: 22px;
+    font-size: clamp(40px, 8vw, 80px); /* Responsive font size */
+    margin-bottom: 20px;
 }
-.hero p {
-    font-size: 25px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-.butt {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 20px;
-    font-size: 18px;
-}
-.image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    display: block;
-}
+
 .features {
     text-align: center;
-    padding: 50px 20px;
-    background-color: #d4dbee;
+    padding: 80px 20px;
+    background-color: var(--bg-light-blue);
 }
-.features h2 {
-    font-size: 45px;
-    margin-bottom: 20px;
-}
-.features p {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
+
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #000;
+    padding: 30px;
+    background-color: var(--accent-black);
     margin-top: auto;
 }
 
@@ -110,74 +106,28 @@ footer p {
     color: #fff;
 }
 
-html, body {
-    overflow-x: hidden;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
+/* --- Responsive Design --- */
 @media (max-width: 768px) {
-
-    nav {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 20px;
-    }
-
-    .hamburger {
-        display: block;
-        font-size: 28px;
-        cursor: pointer;
-    }
+    nav { padding: 20px; }
+    .hamburger { display: block; }
 
     .menu {
         display: none;
         flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
         width: 100%;
-        background-color: #d4dbee;
-        padding: 20px 0;
-        margin-top: 10px;
-    }
-
-    .menu.active {
-        display: flex;
-    }
-}
-
-@media (max-width: 480px) {
-
-    nav {
-        padding: 15px;
-    }
-
-    .hero h1 {
-        font-size: 30px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .butt, .btn {
-        width: 100%;
+        background-color: var(--bg-light-blue);
+        padding: 20px;
         text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    .features h2 {
-        font-size: 30px;
-    }
-
-    .features p {
-        font-size: 16px;
-    }
-
-    .image {
-        width: 100%;
+    .menu.active { display: flex; }
+    
+    .container {
+        flex-direction: column;
+        text-align: center;
     }
 }

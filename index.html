@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PROJECT WORK</title>
-        <link rel="stylesheet" href="style.css" />
-        <link  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400; 700&display=swap" rel="stylesheet"/>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="logo">Medium.</div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medium Redesign | Project 1</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Medium.</div>
+            
+            
+            <div class="hamburger" id="hamburger">☰</div>
 
-                <div class="hamburger" id="hamburger">☰</div>
+            <ul class="menu" id="menu">
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Membership</a></li>
+                <li><a href="#">Write</a></li>
+                <li><a href="#" class="nav-link-btn">Sign In</a></li>
+                <li><button class="btn">Get Started</button></li>
+            </ul>
+        </nav>
+    </header>
 
-                <ul class="menu" id="menu">
-                    <li><a href="#">Our Story</a></li>
-                    <li><a href="#">Membership</a></li>
-                    <li><a href="#">Write</a></li>
-                    <li><a href="#">Sign In</a></li>
-                    <li><button class="btn">Get Started</button></li>
-                </ul>
-            </nav>
-        </header>
-        
-       <main class="main-content">
-        <div class="container">
-            <section class="hero">
-                <h1>HUMAN STORIES & IDEAS.</h1>
-                <p>Discover stories, thinking and expertise from writers on any topic.</p>
-                <button class="butt">Start Reading</button>
-            </section>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-text">
+                    <h1>Human stories & ideas</h1>
+                    <p>A place to read, write, and connect with millions of others.</p>
+                    <button class="butt">Start reading</button>
+                </div>
+                <!-- Placeholder for your image -->
+                <div class="hero-image">
+                    <img src="your-image-link-here.png" alt="Medium Illustration" class="image">
+                </div>
+            </div>
+        </section>
 
-            <section>
-                <img class="image" src="images/Untitled design (3).png" alt="flower" />
-            </section>
-        </div>
-
-        <div class="cont">
-            <section class="features">
-                <h2>Why Medium?</h2>
-                <p>Explore fresh ideas from writers worldwide.</p>
-            </section>
-        </div>
+        <section class="features">
+            <h2>Discover more of what matters to you</h2>
+            <p>Explore different topics and find your next favorite read.</p>
+        </section>
     </main>
-        <footer>
-            <p>&copy; 2025 Medium. All rights reserved.</p>
-        </footer>
 
+    <footer>
+        <p>&copy; 2025 Medium. All rights reserved.</p>
+    </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.getElementById("hamburger");
+            const menu = document.getElementById("menu");
 
-   <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.getElementById("hamburger");
-    const menu = document.getElementById("menu");
-
-    hamburger.addEventListener("click", function () {
-        menu.classList.toggle("active");
-    });
-});
-</script>
+            hamburger.addEventListener("click", function () {
+                menu.classList.toggle("active");
+            });
+        });
+    </script>
 </body>
 </html>
